@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 //get by id 
 router.get('/:id', async (req, res) => {
     try {
-        const role = await db('roles')
+        const role = await db('cohorts')
         .where({ id: req.params.id })
         .first();
         res.status(200).json(role);
@@ -31,9 +31,9 @@ router.get('/:id', async (req, res) => {
 // insert
 router.post('/', async (req, res) => {
     try {
-        const [id] = await db('roles').insert(req.body);
+        const [id] = await db('cohorts').insert(req.body);
     
-        const role = await db('roles')
+        const role = await db('cohorts')
         .where({ id })
         .first();
     
@@ -47,12 +47,12 @@ router.post('/', async (req, res) => {
 // //update
 router.put('/:id', async (req, res) => {
     try {
-        const count = await db('roles')
+        const count = await db('cohorts')
         .where({ id: req.params.id })
         .update(req.body);
     
         if (count > 0) {
-            const role = await db('roles')
+            const role = await db('cohorts')
             .where({ id: req.params.id })
             .first();
     
@@ -67,7 +67,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try {
-        const count = await db('roles')
+        const count = await db('cohorts')
         .where({ id: req.params.id })
         .del();
     
