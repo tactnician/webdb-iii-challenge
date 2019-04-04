@@ -1,6 +1,5 @@
 const express = require('express');
 const server = express();
-const router = express.Router();
 
 const helmet = require('helmet');
 
@@ -18,6 +17,6 @@ server.get('/' , (req, res) => {
 })
 
 //router
-server.use('/api/router', router);
+server.use('/api/cohorts', router);
 
 module.exports = server;

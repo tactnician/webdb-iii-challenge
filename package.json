@@ -7,5 +7,16 @@
     "node": "^11.12.0",
     "nodemon": "^1.18.10",
     "sqlite3": "^4.0.6"
-  }
+  },
+  "name": "cohorts",
+  "version": "1.0.0",
+  "description": "webdb-iii-challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": "https://github.com/tactnician/webdb-iii-challenge.git",
+  "author": "tactnician <tactnician@gmail.com>",
+  "license": "MIT"
 }
